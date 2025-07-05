@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uchit Vyas | Portfolio</title>
+  <link href="{{url_for('static',filename = 'assets/Design1/stye1.css')}}" rel="stylesheet"  />
+</head>
+<body>
+  <section class="container">
+    <div class="left-panel">
+      <h1><span>{{uname}}</span> <br /><strong>{{ulname}}</strong></h1>
+      <p>
+        {{ufname}}
+      </p>
+      <div class="social-icons">
+        <a href="https://github.com/"><img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" /></a>
+        <a href="https://in.linkedin.com/"><img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" /></a>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <img src = "static/images/{{image}}" class="profile-pic" alt="profile photo"/>
+      <h2>Profile</h2>
+      <div class="tabs">
+        <button class="tab active" onclick="showTab('study')">Study</button>
+        <button class="tab" onclick="showTab('skills')">Skills</button>
+        <button class="tab" onclick="showTab('contact')">Contact</button>
+      </div>
+      <div class="tab-content">
+        <div id="study" class="content">
+          <p><strong>School</strong>: {{ukname}}</p>
+          <p><strong>Collage</strong>: {{ubname}}</p>
+        </div>
+        <div id="skills" class="content">
+          <p><strong>Skills</strong>:{{uename}}</p>
+          <p><strong>Tools</strong>: Git, VS Code, Linux</p>
+        </div>
+        <div id="contact" class="content">
+          <p><strong>Email</strong>: {{udname}}</p>
+          <p><strong>Website</strong>: www.onrent1.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src={{url_for('static',filename = 'assets/Design1/script1.js')}}></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link href="{{url_for('static',filename = 'assets/Design2/style2.css')}}" rel="stylesheet"  />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">Your Name</div>
+      <nav>
+      <a href="#" onclick="showContent('about')">About</a>
+      <a href="#" onclick="showContent('skills')">Skills</a>
+      <a href="#" onclick="showContent('Education')">Education</a>
+      <a href="#" onclick="showContent('contact')">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <div class="main-content">
+      <div class="profile-pic">
+        <img src = "static/images/{{image}}" class="profile-pic" alt="profile photo"/>
+      </div>
+      <div class="intro-text">
+        <h1>My name is <span>{{uname}}</span> <strong>{{ulname}}</strong>
+        <p>{{job}}</p>
+      </div>
+      <div class="dynamic-content">
+        <!-- DEFAULT (About) -->
+        <div id="about" class="content-box active">
+          <p> About Me : <br> {{ufname}}</p>
+      </div>
+
+        <div id="skills" class="content-box">
+          <h1>Skills</h1>
+          <p>{{uename}}</p>
+        </div>
+
+         <div id="Education" class="content-box">
+          <h1>Education</h1>
+          <p>School: {{ukname}}</p>
+          <p>Collage: {{ubname}}</p>
+         </div>
+
+        <div id="contact" class="content-box">
+          <h1>Contact Me</h1>
+          <p>Email: {{udname}}</p>
+          <p>Phone: {{ucname}}</p>
+
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://linkedin.com" target="_blank">
+        <img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn">
+      </a>
+      <a href="https://github.com" target="_blank">
+        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub">
+      </a>
+    </div>
+  </footer>
+
+  <script src={{url_for('static',filename = 'assets/Design2/script2.js')}}></script>
+</body>
+</html>

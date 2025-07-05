@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Landing</title>
+  <link href="{{url_for('static',filename = 'assets/Design3/style3.css')}}" rel="stylesheet"  />
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo">👨‍💻</div>
+    <nav>
+
+      <a href="#" onclick="showContent('about')">About</a>
+      <a href="#" onclick="showContent('skills')">Skills</a>
+      <a href="#" onclick="showContent('Education')">Education</a>
+      <a href="#" onclick="showContent('contact')">Contact</a>
+    </nav>
+
+      <a href="#" class="contact-btn">Contact</a>
+  </header>
+
+  <!-- Main Section -->
+  <main>
+    <div class="container">
+      <!-- Profile Image -->
+      <div class="image-box">
+        <img src = "static/images/{{image}}" class="profile-pic" alt="profile photo"/>
+      </div>
+      <!-- Dynamic Content Section -->
+      <div class="dynamic-content">
+        <!-- DEFAULT (About) -->
+        <div id="about" class="content-box active">
+          <h2><span>{{uname}}</span> <strong>{{ulname}}</strong></h2>
+          <h1><span>{{job}}</span></h1>
+          <p> About Me : <br> {{ufname}}</p>
+        </div>
+
+        <div id="skills" class="content-box">
+          <h1>Skills</h1>
+          <p>{{uename}}</p>
+        </div>
+
+         <div id="Education" class="content-box">
+          <h1>Education</h1>
+          <p>School: {{ukname}}</p>
+          <p>Collage: {{ubname}}</p>
+         </div>
+
+        <div id="contact" class="content-box">
+          <h1>Contact Me</h1>
+          <p>Email: {{udname}}</p>
+          <p>Phone: {{ucname}}</p>
+
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://github.com/" target="_blank">
+          <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub" />
+         </a>
+        <a href="https://in.linkedin.com/" target="_blank">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn" />
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src={{url_for('static',filename = 'assets/Design3/script3.js')}}></script>
+</body>
+</html>
