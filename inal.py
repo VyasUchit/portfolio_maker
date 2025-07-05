@@ -64,4 +64,5 @@ def upload():
     return render_template(design_name, uname = name, ulname = lastname, ubname = Collage,ukname = School ,image = img_new_name, ucname = phone
                            ,udname = email,uename = Skills,ufname = about, git = github, Link = LinkedIn, job = job_role)   
         
+        # hii
 app.run(debug=True)
