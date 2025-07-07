@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link href="{{url_for('static',filename = 'assets/Design4/style4.css')}}" rel="stylesheet"  />
+  <link rel="icon" href="static/design_images/back2.jpg">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <h2><span>{{uname}}</span> <strong>{{ulname}}</strong></h2>
+      </div>
+      <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('about')">About</a>
+        <a href="#" onclick="showSection('skills')">Skills</a>
+        <a href="#" onclick="showSection('education')">Education</a>
+        <a href="#" onclick="showSection('contact')">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN SECTION -->
+  <main class="main-wrapper">
+
+    <!-- LEFT: IMAGE -->
+    <div class="left-panel">
+      <img src = "static/images/{{image}}" class="profile-pic" alt="profile photo"/>
+    </div>
+
+    <!-- RIGHT: TEXT CONTENT -->
+    <div class="right-panel">
+
+      <section id="home" class="section active">
+        <h4>WELCOME TO MY PORTFOLIO</h4>
+        <h1>I’m a <span class="highlight">{{job}}</span></h1>
+        <button>Download CV</button>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>{{ufname}}</p>
+      </section>
+
+      <section id="skills" class="section">
+        <h2>Skills</h2>
+        <p><span>{{uename}}</span></p>
+      </section>
+
+      <section id="education" class="section">
+        <h2>Education</h2>
+        <p><strong>School:</strong> {{ukname}}</p>
+        <p><strong>College:</strong> {{ubname}}</p>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <p>Email: {{udname}}</p>
+        <p>Phone: {{ucname}}</p>
+      </section>
+
+    </div>
+  </main>
+
+  <script src={{url_for('static',filename = 'assets/Design4/script4.js')}}></script>
+</body>
+</html>

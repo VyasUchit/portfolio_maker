@@ -1,8 +1,10 @@
 from flask import Flask,render_template,request,session
 import uuid
 import os
+import schedule
 app = Flask(__name__)
 app.secret_key = "SecretKey"
+
 
 @app.route("/")
 def home():
@@ -28,9 +30,16 @@ def design1():
 @app.route("/design2")
 def design2():
     return render_template("design2.html")
+
 @app.route("/design3")
 def design3():
     return render_template("design3.html")
+
+@app.route("/design4")
+def design4():
+    return render_template("design4.html")
+
+
 @app.route("/upload" , methods=["GET","POST"])
 def upload():
     desging_upload = session.get("design_sess")
@@ -40,6 +49,8 @@ def upload():
         design_name="design2.html"
     elif desging_upload == "design3" :
         design_name="design3.html"
+    elif desging_upload=="design4":
+        design_name="design4.html"
     if request.method == "POST":
         name = request.form.get("firstname")
         lastname = request.form.get("lastname")
@@ -63,6 +74,12 @@ def upload():
 
     return render_template(design_name, uname = name, ulname = lastname, ubname = Collage,ukname = School ,image = img_new_name, ucname = phone
                            ,udname = email,uename = Skills,ufname = about, git = github, Link = LinkedIn, job = job_role)   
+
+def delete():
+    files = os.listdir("static/images")
+    for f in files:
+        os.remove(f"static/images/{f}")        
         
-        # hii
-app.run(debug=True)
+if __name__ == "__main__": 
+    schedule.every().day.at("23:59").do(delete)
+    app.run(debug=True)
